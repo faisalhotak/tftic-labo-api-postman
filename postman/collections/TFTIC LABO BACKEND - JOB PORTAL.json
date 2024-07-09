@@ -1,0 +1,3260 @@
+{
+	"info": {
+		"_postman_id": "dbe2dbfb-2748-4441-8918-bfd992553bea",
+		"name": "TFTIC LABO BACKEND - JOB PORTAL",
+		"description": "**⚠️ Create these environments variables to use this API ⚠️**\n\n**LOCAL:**\n\n`admin_url` of type `default` of value : `localhost:8080/admin/v1`\n\n`base_url` of type `default` of value : `localhost:8080/v1`\n\n`jwt_token` of type `secret` (_value will be automatically assigned when using login/register endpoints_)\n\n**PRODUCTION:**\n\n`admin_url` of type `default` of value : `api.jobs.flyingdesk.be/admin/v1`\n\n`base_url` of type `default` of value : `api.jobs.flyingdesk.be/v1`\n\n`jwt_token` of type `secret` (_value will be automatically assigned when using login/register endpoints_)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "36755487-dbe2dbfb-2748-4441-8918-bfd992553bea"
+	},
+	"item": [
+		{
+			"name": "🪪 AUTHENTICATION 🪪",
+			"item": [
+				{
+					"name": "ADVERTISERS",
+					"item": [
+						{
+							"name": "LOGIN",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "97549b18-068f-4329-b1a9-6bd57bfae1d4",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "47edd6bf-ed5e-41ef-9266-19238b8d77c6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"advertiser1@example.com\",\r\n    \"password\": \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "REGISTER",
+							"id": "6d0e86d3-1006-45bc-8e2c-50debc35833e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"newadvertiser@example.be\",\n  \"password\": \"12345678\",\n  \"firstname\": \"first\",\n  \"lastname\": \"last\",\n  \"phoneNumber\": \"0123456789\",\n  \"contactEmail\": \"user@user.be\",\n  \"zip\": 1000,\n  \"country\": \"BE\",\n  \"city\": \"Brussels\",\n  \"street\": \"Victory street\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register/advertisers",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register",
+										"advertisers"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "dbdd2f54-759d-4b4d-a3c9-d6370e0c64a7"
+				},
+				{
+					"name": "SEEKERS",
+					"item": [
+						{
+							"name": "LOGIN",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "1d404e28-050f-4361-aeb2-d3575f6a1d0e",
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "fa98234d-a31b-4a27-87eb-332c7eb8e438",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"seeker1@example.com\",\r\n    \"password\": \"password123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "REGISTER",
+							"id": "dceb39a0-17e1-4461-a286-843603ceaec0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"newseeker@example.be\",\n  \"password\": \"12345678\",\n  \"firstname\": \"first\",\n  \"lastname\": \"last\",\n  \"phoneNumber\": \"0123456789\",\n  \"contactEmail\": \"user@user.be\",\n  \"zip\": 1000,\n  \"country\": \"BE\",\n  \"city\": \"Brussels\",\n  \"street\": \"Victory street\",\n  \"gender\": \"M\",\n  \"birthDate\": \"1990-01-01\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/register/seekers",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"register",
+										"seekers"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "577422fa-0ba2-4b86-99c1-40042be64933"
+				}
+			],
+			"id": "c542f8a8-3d1a-4e2f-8625-aee5d4ecc973",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "94bac20f-07a0-48a7-b711-953c33718d87",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d569467f-e148-4d39-8bde-b7808fbadaa1",
+						"type": "text/javascript",
+						"exec": [
+							"try {",
+							"    const response = pm.response.json();",
+							"",
+							"    pm.environment.set('jwt_token', response.accessToken);",
+							"} catch (error) {};",
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "🔒 ADMIN ONLY 🔒",
+			"item": [
+				{
+					"name": "USERS",
+					"item": [
+						{
+							"name": "ADVERTISERS",
+							"item": [
+								{
+									"name": "GET ALL",
+									"id": "da86f279-3581-4f32-bc0f-672155a0bc0c",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{admin_url}}/users/advertisers",
+											"host": [
+												"{{admin_url}}"
+											],
+											"path": [
+												"users",
+												"advertisers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CREATE",
+									"id": "b34b2c3c-3722-4257-9f23-a06c7f63ed3d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"email\": \"newadvertiser@example.be\",\n    \"password\": \"12345678\",\n    \"firstname\": \"first\",\n    \"lastname\": \"last\",\n    \"phoneNumber\": \"0123456789\",\n    \"contactEmail\": \"user@user.be\",\n    \"zip\": 1000,\n    \"country\": \"BE\",\n    \"city\": \"Brussels\",\n    \"street\": \"Victory street\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{admin_url}}/users/advertisers",
+											"host": [
+												"{{admin_url}}"
+											],
+											"path": [
+												"users",
+												"advertisers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "UPDATE",
+									"id": "ba5fc632-93bf-4805-ad8a-573ae926f573",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"firstname\": \"second\",\n  \"lastname\": \"last\",\n  \"phoneNumber\": \"0123456789\",\n  \"contactEmail\": \"user@user.be\",\n  \"zip\": 1000,\n  \"country\": \"BE\",\n  \"city\": \"Brussels\",\n  \"street\": \"Victory street\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{admin_url}}/users/advertisers/6",
+											"host": [
+												"{{admin_url}}"
+											],
+											"path": [
+												"users",
+												"advertisers",
+												"6"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "e5c5d95e-ef11-4bfe-99dd-b5e485315a0a"
+						},
+						{
+							"name": "SEEKERS",
+							"item": [
+								{
+									"name": "GET ALL",
+									"id": "9bfa6d7b-af01-4f8a-9f7f-5f9ae078b4b4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{admin_url}}/users/seekers",
+											"host": [
+												"{{admin_url}}"
+											],
+											"path": [
+												"users",
+												"seekers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CREATE",
+									"id": "b85e48b1-2a37-404a-bc67-0647777a027d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"newseeker@example.be\",\r\n    \"password\": \"12345678\",\r\n    \"firstname\": \"first\",\r\n    \"lastname\": \"last\",\r\n    \"phoneNumber\": \"0123456789\",\r\n    \"contactEmail\": \"user@user.be\",\r\n    \"zip\": 1000,\r\n    \"country\": \"BE\",\r\n    \"city\": \"Brussels\",\r\n    \"street\": \"Victory street\",\r\n    \"gender\": \"M\",\r\n    \"birthDate\": \"1990-01-01\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{admin_url}}/users/seekers",
+											"host": [
+												"{{admin_url}}"
+											],
+											"path": [
+												"users",
+												"seekers"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "UPDATE",
+									"id": "42db1948-86a3-48c1-9ffa-a72079c5749d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"firstname\": \"second\",\n  \"lastname\": \"last\",\n  \"phoneNumber\": \"0123456789\",\n  \"contactEmail\": \"user@user.be\",\n  \"zip\": 1000,\n  \"country\": \"BE\",\n  \"city\": \"Brussels\",\n  \"street\": \"Victory street\",\n  \"gender\": \"M\",\n  \"birthDate\": \"1990-01-01\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{admin_url}}/users/seekers/1",
+											"host": [
+												"{{admin_url}}"
+											],
+											"path": [
+												"users",
+												"seekers",
+												"1"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "3a0e5fd7-ce54-4bb8-a12f-da7722f9ca06"
+						},
+						{
+							"name": "IMPERSONATE USER",
+							"item": [
+								{
+									"name": "IMPERSONATE ONE BY ID",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {},
+												"id": "9a40cf4f-4788-493e-aa70-a001b25d8b8c"
+											}
+										}
+									],
+									"id": "50f0ece7-3760-4aa8-ac41-efcece5c9a17",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{admin_url}}/users/impersonate/id/1",
+											"host": [
+												"{{admin_url}}"
+											],
+											"path": [
+												"users",
+												"impersonate",
+												"id",
+												"1"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "IMPERSONATE ONE BY EMAIL",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													""
+												],
+												"type": "text/javascript",
+												"packages": {},
+												"id": "a1b498fa-4312-4f33-a066-8ef9dbb4c201"
+											}
+										}
+									],
+									"id": "67e0ade2-ba23-4903-9657-7442d4510754",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{admin_url}}/users/impersonate/email/advertiser1@example.com",
+											"host": [
+												"{{admin_url}}"
+											],
+											"path": [
+												"users",
+												"impersonate",
+												"email",
+												"advertiser1@example.com"
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"id": "84a80ea1-bdb6-4eca-bb59-3d1486bfa31f",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											""
+										],
+										"id": "e46ee617-8efd-4e9c-883a-297568b6a4db"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"packages": {},
+										"exec": [
+											"try {",
+											"    const response = pm.response.json();",
+											"",
+											"    pm.environment.set('jwt_token', response.token);",
+											"} catch (error) {};",
+											""
+										],
+										"id": "aeebe242-dd5d-4214-8786-e2702cddfc9d"
+									}
+								}
+							]
+						},
+						{
+							"name": "GET ALL",
+							"id": "cb583e40-4cbe-4321-bd93-0ffff3f40324",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/users",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY ID",
+							"id": "6c6beae1-1851-4887-99b3-a9dd8d279b99",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/users/1",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY EMAIL",
+							"id": "92479a27-6759-4229-8892-c46d570b2d43",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/users?email=advertiser1@example.com",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "advertiser1@example.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "LOCK ONE BY ID",
+							"id": "f4dd2800-0582-4b9a-9ae8-6df83b12bb89",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/users/9/lock",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users",
+										"9",
+										"lock"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UNLOCK ONE BY ID",
+							"id": "115bc70e-8b59-4b53-bc03-07330e9f7e74",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/users/9/unlock",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users",
+										"9",
+										"unlock"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DISABLE ONE BY ID",
+							"id": "67abb13d-dc20-4903-af38-9e38d0a277d6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/users/9/disable",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users",
+										"9",
+										"disable"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ENABLE ONE BY ID",
+							"id": "ee95e065-ee88-4bf6-927b-bfedfcf043a8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/users/9/enable",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users",
+										"9",
+										"enable"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE USER",
+							"id": "296e3e04-3503-4951-8c89-9abb3f6588ef",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/users/9",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"users",
+										"9"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "e4d33e99-2d3a-4745-a368-0ab39cedb26e"
+				},
+				{
+					"name": "ROLES",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "3581234e-01f9-4014-9bfa-5296f24aade1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/roles",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY ID",
+							"id": "c053c5d9-58f3-4f48-af55-1b736bb0d5f9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/roles/4",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"roles",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY NAME",
+							"id": "17ef33fd-5efe-4ef5-bae7-3ad0279a9a87",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/roles?name=SEEKER",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"roles"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "SEEKER"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "0b4144ab-b126-4c8b-9968-55a0f389b585",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"UNDEFINED\",\r\n    \"description\": \"Nouveau role indéfini\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/roles",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "f471a2e4-ab09-4fe4-ba83-ba23921d29e1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Yolo\",\r\n    \"description\": \"Yolo\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/roles/6",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"roles",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "b11bc50c-f460-4693-9c7b-96c6240c8cfc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/roles/6",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"roles",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "0095bf41-4f94-46ca-b343-ab0ec82e6ba7"
+				},
+				{
+					"name": "CONTRACT_TYPES",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "32d608bf-a389-43cb-851e-c830dff14e84",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/contract-types",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"contract-types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY ID",
+							"id": "311ec513-97bc-4f09-96a3-5e9915150f22",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/contract-types/1",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"contract-types",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "fe4a48b4-2250-466e-a4e2-7d6bf5666607",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"TFI\",\n    \"description\": \"Contrat de travail impliquant le chômage\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/contract-types",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"contract-types"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "3e71c2b2-35e4-46c9-888b-2a72605a0beb",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Autre contrat\",\n    \"description\": \"Un autre contrat\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/contract-types/4",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"contract-types",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "652c85f0-2bb5-4950-8ace-f18b39702cc5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/contract-types/4",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"contract-types",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "ab143844-a59a-4ac9-9710-b9f4544a77ce"
+				},
+				{
+					"name": "SOCIALS",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "3d1870f0-3814-4d67-8ca5-165d1963a3a7",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/socials",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"socials"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY ID",
+							"id": "10d2a66e-219a-4c7a-8b0f-31b6d57c9b45",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/socials/10",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"socials",
+										"10"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "1ffb504d-eb61-4601-8366-2ddf2bd2beac",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Technofutur TIC\",\n    \"logoUrl\": \"https://technofuturtic.be/logo.ico\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/socials",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"socials"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "a07d8512-7477-44d4-9245-11a8b5101ecd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Technofutur TIC V2\",\n    \"logoUrl\": \"https://technofuturticv2.be/logo.ico\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/socials/11",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"socials",
+										"11"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "a0d9645b-ffe8-4e4a-9949-947c332937ab",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/socials/11",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"socials",
+										"11"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "d477a1fe-6ced-40bd-aa1b-69489b90c247"
+				},
+				{
+					"name": "JOB-FUNCTIONS",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "f1a25081-3a07-41e9-8e42-c1953120c293",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/job-functions",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"job-functions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID",
+							"id": "e22b61e4-1679-49fe-a073-35f397cf1ca1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/job-functions/1",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"job-functions",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "2676d164-c91a-4a1f-aaac-e0db3c4eaddf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Software Engineer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/job-functions",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"job-functions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "ee2d958c-04ec-4959-9205-51a0638e4e02",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Software Dev\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/job-functions/4",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"job-functions",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "b25e032e-96d4-4e1e-a98f-611302fcec08",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/job-functions/4",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"job-functions",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "a05fad69-30e7-49de-97ee-158d753c3d7f"
+				},
+				{
+					"name": "SKILL-DETAILS",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "96b39611-1f65-47dc-b515-42659982a627",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/skill-details",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"skill-details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID",
+							"id": "a3f21a49-635b-4fb9-a271-2eaae8b4d91a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/skill-details/5",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"skill-details",
+										"5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "9fa1d994-4689-411c-8d83-4b0696ada342",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Software Engineer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/skill-details",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"skill-details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "6c258788-94a1-44e7-bc13-af6e4540a339",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Java Programminggs\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/skill-details/6",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"skill-details",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "7bf9e57c-6b62-46d1-8c7b-d873f6645ba5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/skill-details/6",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"skill-details",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "43f7694d-b304-4de9-93c3-55a344a6f586"
+				},
+				{
+					"name": "APPLICATIONS",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "b888d5b2-b2b9-485e-be93-4bd9db60c4fe",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/applications",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"applications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY ID",
+							"id": "c760619c-c694-45c1-bca8-9bd27829c293",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{admin_url}}/applications/15",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"applications",
+										"15"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE ONE STATUS",
+							"id": "1ce38ac8-037a-4654-892f-b0f1a3951434",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"status\": \"SUBMITTED\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/applications/15",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"applications",
+										"15"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "d919cb40-6c1d-4710-8696-f97517221864"
+				},
+				{
+					"name": "COMPANIES",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "2a5b5dd3-3908-4f25-8a6f-9a0027bc151c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Tesla\",\n    \"websiteUrl\": \"https://tesla.com\",\n    \"establishmentDate\": \"2020-01-01\",\n    \"contactName\": \"Elon Musk\",\n    \"contactPhoneNumber\": \"121010101\",\n    \"contactDepartment\": \"Information Technology\",\n    \"advertiserRole\": \"OWNER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/companies",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"companies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID",
+							"id": "08805024-58aa-45dc-a375-6ed962b2ea85",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/companies/3",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"companies",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "df54646d-66a3-4714-a398-3de94cfa5803",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Tesla\",\n    \"websiteUrl\": \"https://tesla.com\",\n    \"establishmentDate\": \"2024-05-21T14:37:18\",\n    \"contactName\": \"Elon Musk\",\n    \"contactPhoneNumber\": \"121010101\",\n    \"contactDepartment\": \"Information Technology\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/companies/6",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"companies",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "52e8914a-06fe-4883-ac95-4a86e037a62f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Tesla\",\n    \"websiteUrl\": \"https://tesla.com\",\n    \"establishmentDate\": \"2024-05-21T14:37:18.274164\",\n    \"contactName\": \"Elon Musk\",\n    \"contactPhoneNumber\": \"121010101\",\n    \"contactDepartment\": \"Information Technology\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/companies/4",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"companies",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ACTIVATE ONE BY ID",
+							"id": "db439592-e5af-4ce4-9077-8bdb35dd38d1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/companies/1/activate",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"companies",
+										"1",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DEACTIVATE ONE BY ID",
+							"id": "f402b0f5-e487-4529-a942-f4aa1cb51412",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/companies/1/deactivate",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"companies",
+										"1",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "12547c31-4892-4cae-b5e0-9b6d1481d111",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/companies/7",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"companies",
+										"7"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "f9751956-a74f-46d1-8489-0c51215a11e2"
+				},
+				{
+					"name": "JOB-OFFERS",
+					"item": [
+						{
+							"name": "ACTIVATE ONE BY ID",
+							"id": "39bb4d0e-23bc-4776-a7cb-8263a0db1c0d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/job-offers/activate",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"job-offers",
+										"activate"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DEACTIVATE ONE.BY ID",
+							"id": "ce039b45-97a3-4431-bbf7-fd6cedb0c4c2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{admin_url}}/job-offers/deactivate",
+									"host": [
+										"{{admin_url}}"
+									],
+									"path": [
+										"job-offers",
+										"deactivate"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "dda90fa7-c5f7-4e27-af3b-eca1e70ed2fe"
+				}
+			],
+			"id": "b2d59c95-7fe9-40b8-b340-1a3ce12377ab"
+		},
+		{
+			"name": "PROFILE",
+			"item": [
+				{
+					"name": "ME",
+					"id": "71bfc6ae-65d5-49ec-bd73-36c0f7fc6744",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/profile/me",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"profile",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "6a20f530-197a-4a77-b61b-548e1cdeb3e9"
+		},
+		{
+			"name": "SOCIAL-LINKS",
+			"item": [
+				{
+					"name": "GET ALL",
+					"id": "1d3c67ef-6e26-4c12-ade5-fcefbe02b3ea",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/social-links",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"social-links"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE BY ID",
+					"id": "add4cecf-13df-48b6-9827-9a620c022cbf",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/social-links/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"social-links",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"id": "17bdece9-cdda-4067-ae84-06c81ad3888b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"http://yolo.be/img.ico\",\n    \"socialId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/social-links",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"social-links"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"id": "03e1199a-ff17-4be0-82f3-0f981518ee32",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"url\": \"http://loyo.be/img.icoooooo\",\n    \"socialId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/social-links/3",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"social-links",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"id": "fb8378c9-c795-4b5b-9533-fdfa6347e8de",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/social-links/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"social-links",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "955fef05-e720-4963-9a92-afa07097e330"
+		},
+		{
+			"name": "JOB-OFFERS",
+			"item": [
+				{
+					"name": "GET ALL",
+					"id": "358ebdea-572a-418e-854d-91d79b94e2df",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/job-offers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"job-offers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ONE BY ID",
+					"id": "d3d150ea-148d-4e40-b320-e31a8fb78af7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/job-offers/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"job-offers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL BY COMPANY",
+					"id": "dfe7c7f2-1de3-4c66-859b-47bc251589a2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/job-offers/companies/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"job-offers",
+								"companies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ALL BY ADVERTISER",
+					"id": "dff445a2-0ee7-4628-ab36-bc65221baf79",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/job-offers/agents/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"job-offers",
+								"agents",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CREATE",
+					"id": "e2ff5aee-4062-4b7c-a652-8ea244fee817",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/job-offers",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"job-offers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UPDATE",
+					"id": "f4b094b8-e3ab-40f0-80e0-8b3639164034",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/job-offers/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"job-offers",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH ONE BY ID",
+					"id": "6744b8c7-7f35-4eb7-af7f-79105447769a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/job-offers/4",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"job-offers",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE",
+					"id": "de9fdead-5b5d-425a-84b1-1ad4cbf5d9a9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/job-offers/4",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"job-offers",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "d852cdc6-baff-4fac-9a19-323a6e498b4c"
+		},
+		{
+			"name": "ADVERTISERS",
+			"item": [
+				{
+					"name": "COMPANIES",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "58fd7a35-00df-4a3c-9819-01590b1ea3e0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/companies",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"companies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID",
+							"id": "b6febe58-e589-4716-9bd9-38f367aeacfc",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/companies/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"companies",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "16dd341a-7282-4ac5-b69f-2e762c808570",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Tesla\",\n    \"websiteUrl\": \"https://tesla.com\",\n    \"establishmentDate\": \"2024-05-21T14:37:18\",\n    \"contactName\": \"Elon Musk\",\n    \"contactPhoneNumber\": \"121010101\",\n    \"contactDepartment\": \"Information Technology\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/companies",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"companies"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "22332160-faaa-4876-be25-d807b24af424",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Tesla\",\n    \"websiteUrl\": \"https://tesla.com\",\n    \"establishmentDate\": \"2024-05-21T14:37:18.274164\",\n    \"contactName\": \"Elon Musk\",\n    \"contactPhoneNumber\": \"121010101\",\n    \"contactDepartment\": \"Information Technology\",\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/companies/4",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"companies",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "abe9afb3-3949-4588-b40a-c05430835b9a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/companies/7",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"companies",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "93b1d8dd-8134-45ed-ab93-bcd467893892",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"jobAdvertiserId\": 7,\r\n    \"advertiserRole\": \"OWNER\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/companies/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"companies",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "c628405f-c091-4f51-8a50-072940059ce5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/companies",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"companies"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "8bf61ec7-d727-45c8-87ad-c7ed95c7edbb"
+				}
+			],
+			"id": "65416e39-32c1-488f-81b4-6650aad42dbd"
+		},
+		{
+			"name": "SEEKERS",
+			"item": [
+				{
+					"name": "EXPERIENCE-DETAIL",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "aa1b9eb3-cbf6-4e1b-936c-592f1a9bba2b",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/experience-details",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"experience-details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "1587c85e-d733-4859-a1e4-9ab9ea1e3535",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"companyName\": \"Facebook\",\n    \"description\": \"Entreprise détenant Facebook, Messenger et Whatsapp\",\n    \"startDate\": \"2000-01-01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/experience-details",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"experience-details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "d68ffeee-debc-4fcc-96fe-3f518b0d63c5",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"companyName\": \"Meta\",\n    \"description\": \"Entreprise côtée en bourse\",\n    \"startDate\": \"2000-01-01\",\n    \"endDate\": \"2025-01-01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/experience-details/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"experience-details",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "be443ee4-c1d9-4cc5-8a0c-de8db81e446c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/experience-details/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"experience-details",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "a461c127-cf80-4e79-877a-0858fb1237d6"
+				},
+				{
+					"name": "CERTIFICATION-DETAIL",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "31401f65-b45a-4563-8ccb-09ca8f06a475",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/certification-details",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"certification-details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY ID",
+							"id": "bf389cf3-1aec-4ea5-8e14-6330d30ea002",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/certification-details/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"certification-details",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "242728d9-6fb2-4147-9071-9a4f714276a3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Oracle Java Associate\",\n    \"description\": \"A java associate oracle certification\",\n    \"completionDate\": \"2022-06-01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/certification-details",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"certification-details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "cca006d4-3b48-4a01-8dbb-96fa75581e8f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Orace Java Professional\",\n    \"description\": \"You are now a pro java dev !\",\n    \"completionDate\": \"2023-06-01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/certification-details/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"certification-details",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "574b1498-885d-42a9-9526-9af0377c4d23",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/certification-details/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"certification-details",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "86088f25-37e7-4779-9def-9af864bb0c22"
+				},
+				{
+					"name": "EDUCATION-DETAIL",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "53e1eac1-70d3-4c37-8b88-8e492fb025b2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/education-details",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"education-details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY ID",
+							"id": "97651422-5d2f-4ebc-80ad-d34fe6a68364",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/education-details/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"education-details",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "410e85e8-613d-414f-884d-e02a049575ac",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"instituteName\": \"UMons\",\n    \"major\": \"Computer Science\",\n    \"degreeType\": \"BACHELOR\",\n    \"mention\": \"NONE\",\n    \"startDate\": \"2020-09-01\",\n    \"completionDate\": \"2023-06-01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/education-details",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"education-details"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "d2b67b09-f5f6-4a13-8842-4a55836c9db6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"instituteName\": \"ULB\",\n    \"major\": \"Gynecology\",\n    \"degreeType\": \"Master\",\n    \"mention\": \"HIGH_DISTINCTION\",\n    \"startDate\": \"2021-09-01\",\n    \"completionDate\": \"2023-06-01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/education-details/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"education-details",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "7e5567b1-8e06-40ca-9003-885c84559594",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/education-details/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"education-details",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "dbbe8ebe-5323-40c5-a142-35f37ee65e1a"
+				},
+				{
+					"name": "SKILL-SET",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "359e720d-d406-45d0-803c-30d92791209e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/skill-sets",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"skill-sets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY ID",
+							"id": "c857667d-094b-405a-bce7-09dae0c54827",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/skill-sets/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"skill-sets",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "81896b38-b58f-41af-9025-37da549e83a4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"skillLevel\": \"BEGINNER\",\n    \"years\": 2,\n    \"skillDetailId\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/skill-sets",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"skill-sets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "d441bc03-2383-418d-873d-ec079f21ee02",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"skillLevel\": \"EXPERT\",\n    \"years\": 5,\n    \"skillDetailId\": 2\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/skill-sets/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"skill-sets",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "9b0a7134-8f7d-4aa9-9c4a-8e4ee8db1902",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/skill-sets/3",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"skill-sets",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "3627751d-8458-47b9-9c98-afaff4deda56"
+				},
+				{
+					"name": "DRIVING-LICENCE",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "b9f3a533-8f2a-460d-b94b-d63926d49a42",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/driving-licences",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"driving-licences"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY ID",
+							"id": "ade66984-5765-486d-855d-df66cf187bf3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/driving-licences/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"driving-licences",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "e1a4b21b-2c08-4792-a1e1-2ff7e62a8597",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"drivingLicenceCategory\": \"AM\",\n    \"issueDate\": \"2023-01-01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/driving-licences",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"driving-licences"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UPDATE",
+							"id": "d658ce13-e7e7-48b2-b2ab-6d2949b25f98",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"drivingLicenceCategory\": \"B\",\n    \"issue_date\": \"2020-01-01\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/driving-licences/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"driving-licences",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "f7d59aeb-704a-42ce-8f81-99add6ee07b1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/driving-licences/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"driving-licences",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "dec620ed-459a-4b03-86cd-e3669abdd1c8"
+				},
+				{
+					"name": "APPLICATIONS",
+					"item": [
+						{
+							"name": "GET ALL",
+							"id": "7a4213e3-23cd-4a92-8214-6dc0acddb398",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/applications",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"applications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ONE BY ID",
+							"id": "76a20c70-0066-4763-afeb-872ff03faa5e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/applications/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"applications",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE",
+							"id": "fe3f62d0-82fb-435d-9cbf-b75ea17c523e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"applyDate\": \"2020-01-01T12:00:00\",\n    \"jobOfferId\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/applications",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"applications"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT",
+							"id": "69cbfbed-9277-4f66-9ac9-81054dea4869",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"applyDate\": \"2020-01-01T12:00:00\",\n    \"applicationStatus\": \"CANCELLED\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/applications/16",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"applications",
+										"16"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CANCEL ONE",
+							"id": "71f1888c-2d27-483d-a207-270ceabc71d1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/applications/11",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"applications",
+										"11"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DELETE",
+							"id": "ed75448d-8ae1-4f46-a3b9-edfba72fe8ba",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/applications/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"applications",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "1327a49a-8a41-4dd0-bb97-e51976a3956d"
+				}
+			],
+			"id": "f04d6080-032a-4a09-bbd4-8f65e519a948"
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{jwt_token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "4ecefdbb-5ca5-4c6a-984b-ec6e01b57d8f"
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				],
+				"id": "c423cae9-33f9-4ffe-b8ef-5420fe61c149"
+			}
+		}
+	]
+}
